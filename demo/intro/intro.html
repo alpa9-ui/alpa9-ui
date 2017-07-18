@@ -1,0 +1,38 @@
+<div id="banner" style="background: #111111; color: #ccc; tex-align: center;">
+  <div class="slds-container--large slds-container--center">
+    <div class="slds-grid slds-grid--align-center slds-p-around--large">
+      <div class="slds-col slds-text-align--center"><img src="img/shield.svg" style="height: 170px;"/>
+        <div style="color:#FFF;" class="slds-text-heading--large">ALPA9-UI</div>
+        <div class="slds-m-top--small">Components developed for Angular by Brazpine</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="slds-container--large slds-container--center slds-m-top--small slds-p-around--x-large">
+  <select #langSelect (change)="translate.use(langSelect.value)">
+    <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+  </select>
+  <div class="slds-p-vertical--large">
+    <div class="slds-text-heading--large slds-m-bottom--large">Getting started</div>
+    <p class="slds-m-bottom--small">Install through <code>npm</code>:</p>
+    <prism [html]="install"></prism>
+  </div>
+  <div class="slds-p-vertical--x-small">
+    <div class="slds-text-heading--large slds-m-bottom--large">Reading the documentation</div>
+    <p>Each component has API documentation, examples, and a working demo. They can be found <a [routerLink]="['/components']">here</a>.</p>
+  </div>
+  <div class="slds-p-vertical--large">
+    <div class="slds-text-heading--large slds-m-bottom--large">Usage</div>
+    <p>Once installed you need to import our main module into your application module by calling <code>Alpa9UIModule</code>. You should end up with code similar to this:</p>
+    <prism [html]="usageApp"></prism>
+  </div>
+  <div class="slds-p-vertical--large">
+    <div class="slds-text-heading--large slds-m-bottom--large">Configuration</div>
+    <p>Optionally, you can pass an object to the <code>forRoot</code> method, to configure <code>ng-lightning</code> during the initialization of the application, in order to provide your own default values.
+      For example:
+    </p>
+    <prism [html]="config"></prism>
+    <p class="slds-m-top--large">If you want to change some config properties during runtime, you can easily achieve it by utilizing the <code>update</code> method like this:</p>
+    <prism [html]="configRun"></prism>
+  </div>
+</div>
